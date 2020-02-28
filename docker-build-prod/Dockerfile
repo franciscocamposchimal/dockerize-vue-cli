@@ -1,12 +1,11 @@
 # develop stage
-FROM node:12.16-alpine as develop-stage
+FROM node:11.1-alpine as develop-stage
 WORKDIR /app
-RUN yarn global add @vue/cli
+COPY package*.json ./
+RUN yarn install
+COPY ./ .
 # build stage
 FROM develop-stage as build-stage
-COPY package.json yarn.lock ./
-RUN yarn install
-COPY . ./app
 RUN yarn build
 # production stage
 FROM nginx:1.15.7-alpine as production-stage

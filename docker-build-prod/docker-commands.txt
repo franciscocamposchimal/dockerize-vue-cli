@@ -12,4 +12,4 @@ Ahora accedemos a la aplicación en localhost:8080
 Al realizar cambios en el código, la aplicación se volverá a cargar en el navegador.
 En caso de agregar otro paquete de node, simplemente ejecute el siguiente comando:
 
-docker-compose exec frontend yarn add <package-name>
+docker-compose exec app yarn add <package-name>
