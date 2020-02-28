@@ -1,0 +1,15 @@
+---DOCKER CONTAINER---
+build container with: docker build -t dockerize-vue .
+run the container: docker run -it -p 8000:80 --rm dockerize-vue
+
+---DOCKER COMPOSE---
+construimos sólo "develop-stage" ya que necesitamos el código fuente, node, yarn, vue-cli instalado, etc. 
+Cree la imagen y ejecute la aplicación en modo de desarrollo con docker-compose:
+
+docker-compose up --build
+
+Ahora accedemos a la aplicación en localhost:8080 
+Al realizar cambios en el código, la aplicación se volverá a cargar en el navegador.
+En caso de agregar otro paquete de node, simplemente ejecute el siguiente comando:
+
+docker-compose exec frontend yarn add <package-name>
