@@ -6,7 +6,7 @@ RUN yarn global add @vue/cli
 FROM develop-stage as build-stage
 COPY package.json yarn.lock ./
 RUN yarn install
-COPY . ./app
+COPY . .
 RUN yarn build
 # production stage
 FROM nginx:1.15.7-alpine as production-stage
